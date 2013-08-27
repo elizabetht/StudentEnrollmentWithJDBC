@@ -7,12 +7,14 @@
 <title>Student Enrollment Login</title>
 </head>
 <body>
-<form>
-<br>
-<br>
-<center><input type="text" name="username" placeholder="User Name"></center><br>
-<center><input type="password" name="password" placeholder="Password"></center><br>
-<center><input type="submit" value="Login"></center>
-</form>
+	<form method="POST" action='StudentController'>
+	
+	<br>
+	<br>
+	<center><input type="hidden" name="pageName" value="login"></center><br>
+	<center><input type="text" name="userName" placeholder="User Name"></center><br>
+	<center><input type="password" name="password" placeholder="Password"></center><br>
+	<center><input type="submit" name="login" value="Login"></center>	
+	</form>
 </body>
 </html>

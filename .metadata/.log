@@ -1,13 +1,13 @@
-!SESSION 2013-08-23 18:17:14.293 -----------------------------------------------
+!SESSION 2013-08-24 12:46:01.776 -----------------------------------------------
 eclipse.buildId=I20110613-1736
 java.version=1.7.0_25
 java.vendor=Oracle Corporation
 BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
-Command-line arguments:  -os linux -ws gtk -arch x86_64
+Command-line arguments:  -data /home/sara/MyGitSource/studentenrollment -os linux -ws gtk -arch x86_64
 
-!ENTRY org.eclipse.jface 2 0 2013-08-23 18:17:57.605
+!ENTRY org.eclipse.jface 2 0 2013-08-24 12:46:11.639
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
-!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-23 18:17:57.605
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-24 12:46:11.639
 !MESSAGE A conflict occurred for ALT+SHIFT+D R:
 Binding(ALT+SHIFT+D R,
 	ParameterizedCommand(Command(org.eclipse.rap.ui.launch.RAPLaunchShortcut.debug,Debug RAP Application,
@@ -25,7 +25,7 @@ Binding(ALT+SHIFT+D R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-23 18:17:57.606
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-24 12:46:11.639
 !MESSAGE A conflict occurred for ALT+SHIFT+X R:
 Binding(ALT+SHIFT+X R,
 	ParameterizedCommand(Command(org.eclipse.rap.ui.launch.RAPLaunchShortcut.run,Run RAP Application,
@@ -43,7 +43,7 @@ Binding(ALT+SHIFT+X R,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-23 18:17:57.606
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-24 12:46:11.639
 !MESSAGE A conflict occurred for CTRL+SHIFT+I:
 Binding(CTRL+SHIFT+I,
 	ParameterizedCommand(Command(org.eclipse.jdt.debug.ui.commands.Inspect,Inspect,
@@ -61,7 +61,7 @@ Binding(CTRL+SHIFT+I,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.dialogAndWindow,,,system)
-!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-23 18:17:57.606
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-24 12:46:11.639
 !MESSAGE A conflict occurred for CTRL+DEL:
 Binding(CTRL+DEL,
 	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,

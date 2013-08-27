@@ -7,18 +7,32 @@
 <title>Student Enrollment Signup</title>
 </head>
 <body>
-<form>
-<br>
-<br>
-<center><h4>New User Signup</center>
-<center><input type="text" name="username" placeholder="User Name"></center><br>
-<center><input type="password" name="password" placeholder="Password"></center><br>
-<center><input type="text" name="fname" placeholder="First Name"></center><br>
-<center><input type="text" name="lname" placeholder="Last Name"></center><br>
-<center><input type="text" name="dob" placeholder="Date of Birth"></center><br>
-<center><input type="text" name="email" placeholder="Email Address"></center><br>
-<center><input type="submit" value="Signup"></center>
-<center><h4>Already an user? <a href="login.jsp">Log in</a></center>
-</form>
+	
+	<form name="signupForm" method="POST" action='StudentController'>		
+		<% Object userExists = request.getAttribute("userNameExists"); %>
+		<br>
+		<center><h4>New User Signup</h4></center>
+		<center><input type="hidden" name="pageName" value="signup"></center><br>
+		<!-- <center><input type="text" name="userNameExists" value="<%=request.getAttribute("userNameExists") %>"></center><br>-->
+		<center><input type="text" name="userName" placeholder="User Name"></center><br>
+		<center><input type="password" name="password" placeholder="Password"></center><br>
+		<center><input type="text" name="firstName" placeholder="First Name"></center><br>
+		<center><input type="text" name="lastName" placeholder="Last Name"></center><br>
+		<center><input type="text" name="dateOfBirth" placeholder="Date of Birth(MM/dd/YYYY)"></center><br>
+		<center><input type="text" name="emailAddress" placeholder="Email Address"></center><br>
+		<center><input type="submit" name="signup" value="Signup"></center>
+		<%
+		if(request.getParameter("signup") != null) {			
+			if(request.getAttribute("userNameExists").equals(true)) {
+				%><script>
+				alert("User Already Exists");
+				</script><%
+			}
+		}
+		%>
+		
+		<center><h4>Already an user? <a href="login.jsp">Log in</a></h4></center>
+	</form>
+	
 </body>
 </html>
