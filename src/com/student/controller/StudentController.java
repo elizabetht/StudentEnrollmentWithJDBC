@@ -18,7 +18,7 @@ import com.student.model.Student;
 /**
  * Servlet implementation class StudentController
  */
-@WebServlet("/StudentController")
+
 public class StudentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private StudentDao studentDao;
