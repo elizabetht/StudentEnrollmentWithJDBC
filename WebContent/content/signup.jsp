@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-	<form name="signupForm" method="POST" action='StudentController'>		
+	<form name="signupForm" method="POST" action="StudentController">		
 		<% Object userExists = request.getAttribute("userNameExists"); %>
 		<br>
 		<center><h4>New User Signup</h4></center>
@@ -31,7 +31,7 @@
 		}
 		%>
 		
-		<center><h4>Already an user? <a href="login.jsp">Log in</a></h4></center>
+		<center><h4>Already an user? <a href="content/login-test.jsp">Log in</a></h4></center>
 	</form>
 	
 </body>

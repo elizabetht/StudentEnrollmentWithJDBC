@@ -7,7 +7,7 @@
 <title>Student Enrollment Login</title>
 </head>
 <body>
-	<form method="POST" action='StudentController'>
+	<form method="POST" action="StudentController">
 	
 	<br>
 	<br>

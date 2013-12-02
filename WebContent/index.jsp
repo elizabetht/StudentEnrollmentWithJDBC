@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Student Enrollment</title>
+<title>Student Enrollment With JDBC</title>
 </head>
 <body>
-<jsp:forward page="/StudentController?action=signupStudent"></jsp:forward>
+<jsp:forward page="/StudentController?action=signupStudent" ></jsp:forward>
 </body>
 </html>

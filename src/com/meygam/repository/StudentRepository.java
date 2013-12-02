@@ -1,38 +1,41 @@
-package com.student.dao;
+package com.meygam.repository;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
-import com.student.model.Student;
-import com.student.util.DbUtil;
+import com.meygam.util.DbUtil;
 
-public class StudentDao {
+public class StudentRepository {
 	private Connection dbConnection;
 	
-	public StudentDao() {
+	public StudentRepository() {
 		dbConnection = DbUtil.getConnection();
 	}
 	
-	public void addStudent(Student student) {
+	public void save(String userName, String password, String firstName, String lastName, String dateOfBirth, String emailAddress) {
 		try {
-			PreparedStatement prepStatement = dbConnection.prepareStatement("insert into student(userName, firstName, lastName, password, emailAddress, dateOfBirth) values (?, ?, ?, ?, ?, ?)");
-			prepStatement.setString(1, student.getUserName());
-			prepStatement.setString(2, student.getFirstName());
-			prepStatement.setString(3, student.getLastName());
-			prepStatement.setString(4, student.getPassword());
-			prepStatement.setString(5, student.getEmailAddress());
-			prepStatement.setDate(6, new Date(student.getDateOfBirth().getTime()));
+			PreparedStatement prepStatement = dbConnection.prepareStatement("insert into student(userName, password, firstName, lastName, dateOfBirth, emailAddress) values (?, ?, ?, ?, ?, ?)");
+			prepStatement.setString(1, userName);
+			prepStatement.setString(2, password);
+			prepStatement.setString(3, firstName);
+			prepStatement.setString(4, lastName);
+			prepStatement.setDate(5, new java.sql.Date(new SimpleDateFormat("MM/dd/yyyy")
+			.parse(dateOfBirth.substring(0, 10)).getTime()));
+			prepStatement.setString(6, emailAddress);
 			
 			prepStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} catch (ParseException e) {			
+			e.printStackTrace();
 		}
 	}
 	
-	public boolean checkUserName(String userName) {
+	public boolean findByUserName(String userName) {
 		try {
 			PreparedStatement prepStatement = dbConnection.prepareStatement("select count(*) from student where userName = ?");
 			prepStatement.setString(1, userName);	
@@ -51,7 +54,7 @@ public class StudentDao {
 		return false;
 	}
 	
-	public boolean verifyStudent(String userName, String password) {
+	public boolean findByLogin(String userName, String password) {
 		try {
 			PreparedStatement prepStatement = dbConnection.prepareStatement("select password from student where userName = ?");
 			prepStatement.setString(1, userName);			
