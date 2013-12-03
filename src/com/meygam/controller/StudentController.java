@@ -41,14 +41,8 @@ public class StudentController extends HttpServlet {
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		String forward = "";
-		String action = request.getParameter("action");
-
-		if (action.equalsIgnoreCase("signupStudent")) {
-			forward = STUDENT_SIGNUP;
-		}
-
+			HttpServletResponse response) throws ServletException, IOException {	
+		String forward = STUDENT_SIGNUP;
 		RequestDispatcher view = request.getRequestDispatcher(forward);
 		view.forward(request, response);
 	}
@@ -60,13 +54,13 @@ public class StudentController extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		String pageName = request.getParameter("pageName");
-		String forward = "";
-
+		String forward = "";		
+		
 		if (studentRepository != null) {
 			if (pageName.equals("signup")) {
 				if (studentRepository.findByUserName(request
 						.getParameter("userName"))) {
-					request.setAttribute("userNameExists", true);
+					request.setAttribute("message", "User Name exists. Try another user name");
 					forward = STUDENT_SIGNUP;
 					RequestDispatcher view = request
 							.getRequestDispatcher(forward);
