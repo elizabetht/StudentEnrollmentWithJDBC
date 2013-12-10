@@ -1,4 +1,4 @@
-package com.meygam.repository;
+package com.github.elizabetht.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import com.meygam.util.DbUtil;
+import com.github.elizabetht.util.DbUtil;
 
 public class StudentRepository {
 	private Connection dbConnection;

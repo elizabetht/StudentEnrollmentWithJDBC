@@ -1,4 +1,4 @@
-package com.meygam.util;
+package com.github.elizabetht.util;
 
 import java.io.InputStream;
 import java.sql.Connection;

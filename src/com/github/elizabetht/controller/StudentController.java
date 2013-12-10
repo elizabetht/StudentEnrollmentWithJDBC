@@ -1,4 +1,4 @@
-package com.meygam.controller;
+package com.github.elizabetht.controller;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.meygam.repository.StudentRepository;
+import com.github.elizabetht.repository.StudentRepository;
 
 /**
  * Servlet implementation class StudentController
